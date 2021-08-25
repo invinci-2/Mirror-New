@@ -138,7 +138,11 @@ def get_readable_message():
                     except:
                         pass
                     try:
-                        msg += f"\n<b>⚙️ Engine: Aria2</b>\n<b>🌍:</b> {download.aria_download().connections} | <b>🌱:</b> {download.aria_download().num_seeders}"
+                        msg += f"\n<b>⚙️ Engine: Aria2</b>\n<b>📶:</b> {download.aria_download().connections}"
+                    except:
+                        pass
+                    try:
+                        msg += f" | <b>🌱:</b> {download.aria_download().num_seeders}"
                     except:
                         pass
                     try:

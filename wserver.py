@@ -193,13 +193,21 @@ input[type="submit"]:hover, input[type="submit"]:focus{
 </style>
 </head>
 <body>
+  <!---->
     <header>
       <div class="brand">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/1200px-New_qBittorrent_Logo.svg.png"
           alt="logo"
         />
+        <a href="https://t.me/arata74"> 
           <h2 class="name">Mirror Bot</h2>
+        </a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/yuno74/Mirror-New/tree/qbit"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/arata74"><i class="fab fa-telegram"></i></a>
+      </div>
     </header>
     <section>
       <h2 class="intro">Select The Files You Want To Download</h2>
@@ -510,13 +518,21 @@ section span{
     </style>
   </head>
 <body>
+   <!---->
     <header>
       <div class="brand">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/900px-New_qBittorrent_Logo.svg.png"
           alt="logo"
         />
+        <a href="https://arata74">
           <h2 class="name">Mirror Bot</h2>
+        </a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/yuno74/Mirror-New/tree/qbit"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/arata74"><i class="fab fa-telegram"></i></a>
+      </div>
     </header>
     <section>
       <form action="{form_url}">
@@ -688,7 +704,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<h1>See Mirror Bot</h1>", content_type="text/html")
+    return web.Response(text="<h1>Mirror Bot <a href='https://github.com/yuno74/Mirror-New/tree/qbit'>@GitHub</a> By <a href='https://github.com/yuno74/Mirror-New/tree/qbit'>Mirror Bot</a></h1>", content_type="text/html")
 
 
 async def e404_middleware(app, handler):
