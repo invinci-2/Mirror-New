@@ -1,36 +1,40 @@
-from bot import START_BOT, MIRROR_BOT, UNZIP_BOT, TARMIR_BOT, CANCEL_BOT, CANCEL_ALL_BOT, LIST_BOT, STATUS_BOT
-from bot import USERS_BOT, AUTH_BOT, UNAUTH_BOT, ADDSUDO_BOT, RMSUDO_BOT, RESTART_BOT, STATS_BOT, HELP_BOT
-from bot import LOG_BOT, SPEEDTEST_BOT, CLONE_BOT, COUNT_BOT, YTDL_BOT, TARYTDL_BOT, DELETE_BOT
-from bot import CONFIG_BOT, SHELL_BOT, EXEHELP_BOT, ZIP_BOT, USAGE_BOT
+import os
+
+def getCommand(name: str, command: str):
+    try:
+        if len(os.environ[name]) == 0:
+            raise KeyError
+        return os.environ[name]
+    except KeyError:
+        return command
 
 class _BotCommands:
     def __init__(self):
-        self.StartCommand = f'{START_BOT}'
-        self.MirrorCommand = f'{MIRROR_BOT}'
-        self.UnzipMirrorCommand = f'{UNZIP_BOT}'
-        self.TarMirrorCommand = f'{TARMIR_BOT}'
-        self.ZipMirrorCommand = f'{ZIP_BOT}'
-        self.CancelMirror = f'{CANCEL_BOT}'
-        self.CancelAllCommand = f'{CANCEL_ALL_BOT}'
-        self.ListCommand = f'{LIST_BOT}'
-        self.StatusCommand = f'{STATUS_BOT}'
-        self.AuthorizedUsersCommand = f'{USERS_BOT}'
-        self.UsageCommand = f'{USAGE_BOT}'
-        self.AuthorizeCommand = f'{AUTH_BOT}'
-        self.UnAuthorizeCommand = f'{UNAUTH_BOT}'
-        self.AddSudoCommand = f'{ADDSUDO_BOT}'
-        self.RmSudoCommand = f'{RMSUDO_BOT}'
-        self.RestartCommand = f'{RESTART_BOT}'
-        self.StatsCommand = f'{STATS_BOT}'
-        self.HelpCommand = f'{HELP_BOT}'
-        self.LogCommand = f'{LOG_BOT}'
-        self.CloneCommand = f'{CLONE_BOT}'
-        self.CountCommand = f'{COUNT_BOT}'
-        self.WatchCommand = f'{YTDL_BOT}'
-        self.TarWatchCommand = f'{TARYTDL_BOT}'
-        self.DeleteCommand = f'{DELETE_BOT}'
-        self.ConfigMenuCommand = f'{CONFIG_BOT}'
-        self.ShellCommand = f'{SHELL_BOT}'
-        self.ExecHelpCommand = f'{EXEHELP_BOT}'
+        self.StartCommand = getCommand('START_BOT', 'start')
+        self.MirrorCommand = getCommand('MIRROR_BOT', 'mir')
+        self.UnzipMirrorCommand = getCommand('UNZIP_BOT', 'unzipmir')
+        self.TarMirrorCommand = getCommand('TARMIR_BOT', 'tarmir')
+        self.ZipMirrorCommand = getCommand('ZIP_BOT', 'zipmir')
+        self.CancelMirror = getCommand('CANCEL_BOT', 'cancel')
+        self.CancelAllCommand = getCommand('CANCEL_ALL_BOT', 'cancelall')
+        self.ListCommand = getCommand('LIST_BOT', 'list')
+        self.StatusCommand = getCommand('STATUS_BOT', 'status')
+        self.AuthorizedUsersCommand = getCommand('USERS_BOT', 'users')
+        self.UsageCommand = getCommand('USAGE_BOT', 'usage')
+        self.AuthorizeCommand = getCommand('AUTH_BOT', 'auth')
+        self.UnAuthorizeCommand = getCommand('UNAUTH_BOT', 'unauth')
+        self.AddSudoCommand = getCommand('ADDSUDO_BOT', 'addsudo')
+        self.RmSudoCommand = getCommand('RMSUDO_BOT', 'rmsudo')
+        self.RestartCommand = getCommand('RESTART_BOT', 'restart')
+        self.StatsCommand = getCommand('STATS_BOT', 'stats')
+        self.HelpCommand = getCommand('HELP_BOT', 'help')
+        self.LogCommand = getCommand('LOG_BOT', 'logs')
+        self.CloneCommand = getCommand('CLONE_BOT', 'clone')
+        self.CountCommand = getCommand('COUNT_BOT', 'count')
+        self.WatchCommand = getCommand('YTDL_BOT', 'yt')
+        self.TarWatchCommand = getCommand('TARYTDL_BOT', 'taryt')
+        self.DeleteCommand = getCommand('DELETE_BOT', 'del')
+        self.ShellCommand = getCommand('SHELL_BOT', 'shell')
+        self.ExecHelpCommand = getCommand('EXEHELP_BOT', 'exehelp')
 
 BotCommands = _BotCommands()
